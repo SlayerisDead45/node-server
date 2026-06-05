@@ -277,12 +277,15 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
   .hero-right img {
     width: 100%;
   }
+
   .booking {
     flex-direction: column;
   }
+
   .nav-links {
     display: none;
   }

@@ -11,13 +11,13 @@ function addItem(name, price) {
 
 // i am doing this to remove a service from the cart
 function removeItem(name, price) {
- var index = -1;
-for (var i = 0; i < cartItems.length; i++) {
-  if (cartItems[i].name === name) {
-    index = i;
-    break;
+  var index = -1;
+  for (var i = 0; i < cartItems.length; i++) {
+    if (cartItems[i].name === name) {
+      index = i;
+      break;
+    }
   }
-}
   if (index !== -1) {
     cartItems.splice(index, 1);
     totalAmount = totalAmount - price;
@@ -89,7 +89,7 @@ function bookNow() {
   emailjs.init("agrNY7qKO0HwF4zFY");
 
   emailjs.send("service_x2ogmxn", "template_eumkl9w", templateParams)
-    .then(function() {
+    .then(function () {
       alert("Booking confirmed! Email sent successfully.");
       // i am resetting everything after booking
       cartItems = [];
@@ -99,7 +99,7 @@ function bookNow() {
       document.getElementById("email").value = "";
       document.getElementById("phone").value = "";
     })
-    .catch(function(error) {
+    .catch(function (error) {
       alert("Email sending failed. Please try again.");
       console.log("error:", error);
     });
